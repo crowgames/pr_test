@@ -14,6 +14,12 @@ function buildPaymentRequest() {
     {
       supportedMethods: 'basic-card',
     },
+    {
+      supportedMethods: 'https://bobpay.xyz/pay'
+    },
+    {
+      supportedMethods: 'https://rsolomakhin.github.io'
+    },
   ];
 
   var details = {
