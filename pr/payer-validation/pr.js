@@ -17,9 +17,6 @@ function buildPaymentRequest() {
     {
       supportedMethods: 'https://bobpay.xyz/pay'
     },
-    {
-      supportedMethods: 'https://rsolomakhin.github.io'
-    },
   ];
 
   var details = {
