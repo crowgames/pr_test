@@ -131,6 +131,7 @@ function validateResponse(response) {
 	
 	if(firstPaymentMethod === undefined){
 		firstPaymentMethod = response.methodName;
+		document.getElementById("explanation").style.display = "block";
 	}
 	
     window.setTimeout(function() {
@@ -140,7 +141,6 @@ function validateResponse(response) {
             resolver(validateResponse(response));
           });
       } else {
-        document.getElementById("explanation").style.display = "block";
         resolver();
       }
     }, 2000);
