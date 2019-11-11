@@ -39,6 +39,9 @@ function buildPaymentRequest() {
     },
     {
       supportedMethods: 'https://rsolomakhin.github.io'
+    },
+    {
+      supportedMethods: 'https://rsolomakhin.github.io/pr/apps/pmc/'
     }
   ];
 
