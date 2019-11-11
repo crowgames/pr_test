@@ -118,6 +118,7 @@ function onBuyClicked() {
 }
 
 function validateResponse(response) {
+  console.log(response);
   return new Promise(resolver => {
     if (!response.retry) {
       error('PaymentResponse.retry() is not defined. Is chrome://flags/#enable-experimental-web-platform-features enabled?');
