@@ -32,6 +32,9 @@ function buildPaymentRequest() {
 
   const supportedInstruments = [{
     supportedMethods: 'https://rsolomakhin.github.io/pr/apps/pmc',
+  },
+  {
+    supportedMethods: 'https://bobpay.xyz/pay',
   }];
 
   const details = {
