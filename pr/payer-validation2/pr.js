@@ -12,6 +12,12 @@ function buildPaymentRequest() {
 
   var supportedInstruments = [
     {
+      supportedMethods: 'https://bobpay.xyz/pay'
+    },
+    {
+      supportedMethods: 'https://rsolomakhin.github.io/pr/apps/pmc/'
+    },
+    {
     supportedMethods: 'https://google.com/pay',
     data: {
       allowedPaymentMethods: ['TOKENIZED_CARD', 'CARD'],
@@ -31,18 +37,6 @@ function buildPaymentRequest() {
       },
     },
   },
-    {
-      supportedMethods: 'basic-card',
-    },
-    {
-      supportedMethods: 'https://bobpay.xyz/pay'
-    },
-    {
-      supportedMethods: 'https://rsolomakhin.github.io'
-    },
-    {
-      supportedMethods: 'https://rsolomakhin.github.io/pr/apps/pmc/'
-    }
   ];
 
   var details = {
@@ -55,7 +49,7 @@ function buildPaymentRequest() {
     }
   };
 
-  var options = {requestPayerEmail: true};
+  var options = {};
 
   var request = null;
 

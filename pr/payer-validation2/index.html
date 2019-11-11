@@ -10,13 +10,13 @@
   <div id="contents">
     <h1>Exploit/Demo: Forced double spending through wrong retry implementation.</h1>
     <p>For this demo, two different payment handlers should be installed:</p>
-      <a href="https://rsolomakhin.github.io/pr/apps/pmc/" target="_blank">hhttps://rsolomakhin.github.io/pr/apps/pmc/</a><br>
+      <a href="https://rsolomakhin.github.io/pr/apps/pmc/" target="_blank">https://rsolomakhin.github.io/pr/apps/pmc/</a><br>
       <a href="https://rsolomakhin.github.io/pr/apps/bobpay/" target="_blank">https://rsolomakhin.github.io/pr/apps/bobpay/</a>
     <p>Price: USD <strong>$1.00</strong> <em>(tentative)</em></p>
     <p><button onclick="onBuyClicked()">Buy</button></p>
   </div>
   <pre id="msg"></pre>
-  <div id="explanation" style="display: none;">
+  <div id="explanation" style="display: none; padding: 1em; color: red;">
     Through using the retry method, the user stays in one payment request. <br>
     According to the specification, the payment handler can not be changed during retry (see specification and <a href="https://github.com/w3c/payment-request/issues/882#issuecomment-549197510" target="_blank">here</a>).<br>
     The payment handlers would normally identify a retry through the reoccurence of the same payment request id (see <a href="https://github.com/w3c/payment-request/issues/882#issuecomment-549066460" target="_blank">here</a>).
