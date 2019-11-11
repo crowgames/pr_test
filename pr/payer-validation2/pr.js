@@ -117,18 +117,22 @@ function onBuyClicked() {
   }
 }
 
+var firstPaymentMethod = undefined;
+
 function validateResponse(response) {
-  console.log(response);
   return new Promise(resolver => {
     if (!response.retry) {
       error('PaymentResponse.retry() is not defined. Is chrome://flags/#enable-experimental-web-platform-features enabled?');
       return;
     }
-
+	
+	if(firstPaymentMethod === undefined){
+		firstPaymentMethod = response.methodName;
+	}
+	
     window.setTimeout(function() {
-      if (!response.payerEmail || response.payerEmail != "test@email.com") {
-        var emailError = document.querySelector("#email-error").value;
-        response.retry({ error: 'choose different payment handler'})
+      if (response.methodName == firstPaymentMethod) {
+        response.retry({ error: response.methodName+' is currently unavailable. Please choose a different payment provider'})
           .then(function() {
             resolver(validateResponse(response));
           });
