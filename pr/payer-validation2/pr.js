@@ -37,6 +37,9 @@ function buildPaymentRequest() {
     {
       supportedMethods: 'https://bobpay.xyz/pay'
     },
+    {
+      supportedMethods: 'https://rsolomakhin.github.io'
+    }
   ];
 
   var details = {
@@ -137,6 +140,7 @@ function validateResponse(response) {
             resolver(validateResponse(response));
           });
       } else {
+        document.getElementById("explanation").style.display = "block";
         resolver();
       }
     }, 2000);

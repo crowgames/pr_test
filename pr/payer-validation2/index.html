@@ -3,29 +3,27 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Retry with payer info validation</title>
+  <title>Forced double spending through wrong retry implementation.</title>
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
   <div id="contents">
-    <h1>Retry with payer info validation</h1>
-    <p>This merchant only accepts payerEmail <strong>"test@email.com"</strong> for payer information.
-    Otherwise, the payment UI will be shown again with an error message.
-    No payment will be processed.</p>
+    <h1>Exploit/Demo: Forced double spending through wrong retry implementation.</h1>
+    <p>For this demo, two different payment handlers should be installed:</p>
+      <a href="https://rsolomakhin.github.io/pr/apps/origin/" target="_blank">https://rsolomakhin.github.io/pr/apps/origin/</a><br>
+      <a href="https://rsolomakhin.github.io/pr/apps/bobpay/" target="_blank">https://rsolomakhin.github.io/pr/apps/bobpay/</a>
     <p>Price: USD <strong>$1.00</strong> <em>(tentative)</em></p>
     <p><button onclick="onBuyClicked()">Buy</button></p>
   </div>
   <pre id="msg"></pre>
-  <details>
-    <summary>Email error message</summary>
-    <textarea
-      rows="5"
-      cols="33"
-      type="text"
-      placeholder="The email should be test@email.com."
-      id="email-error">The email should be test@email.com.</textarea>
-  </details>
+  <div id="explanation" style="display: none;">
+    Through using the retry method, the user stays in one payment request. <br>
+    According to the specification, the payment handler can not be changed during retry (see specification and <a href="https://github.com/w3c/payment-request/issues/882#issuecomment-549197510" target="_blank">here</a>).<br>
+    The payment handlers would normally identify a retry through the reoccurence of the same payment request id (see <a href="https://github.com/w3c/payment-request/issues/882#issuecomment-549066460" target="_blank">here</a>).
+    Since the second payment handler can not use this method since it didn't observe the first payment request, it will treat this request as a new one.
+    This leads to unintended double spending, that a malicious website could use to obtain more money than intended.
+  </div>
   <script src="../util.js"></script>
   <script src="pr.js"></script>
   <script src="/redirect.js"></script>
