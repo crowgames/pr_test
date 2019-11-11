@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Forced double spending through wrong retry implementation.</title>
-  <link rel="icon" href="/favicon.ico">
-  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   <div id="contents">
@@ -24,7 +23,7 @@
     Since the second payment handler can not use this method since it didn't observe the first payment request, it will treat this request as a new one.
     This leads to unintended double spending, that a malicious website could use to obtain more money than intended.
   </div>
-  <script src="../util.js"></script>
+  <script src="util.js"></script>
   <script src="pr.js"></script>
   <script src="/redirect.js"></script>
 </body>
