@@ -15,6 +15,12 @@ function buildPaymentRequest() {
       supportedMethods: 'https://bobpay.xyz/pay'
     },
     {
+      supportedMethods: 'https://test1.sec.uni-stuttgart.de/wepay/'
+    },
+    {
+      supportedMethods: 'https://test1.sec.uni-stuttgart.de/payinator/'
+    },
+    {
       supportedMethods: 'https://rsolomakhin.github.io/pr/apps/pmc/'
     },
     {
