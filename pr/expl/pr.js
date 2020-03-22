@@ -32,6 +32,8 @@ function updateDetails(details, shippingOption) {
  */
 function onBuyClicked() { // eslint-disable-line no-unused-vars
   var supportedInstruments = [{
+    supportedMethods: 'https://bobpay.xyz/pay'
+  },{
       supportedMethods: 'https://google.com/pay',
       data: {
         allowedPaymentMethods: ['TOKENIZED_CARD', 'CARD'],
@@ -58,23 +60,23 @@ function onBuyClicked() { // eslint-disable-line no-unused-vars
 
   var details = {
     total: {
-      label: 'Donation',
+      label: 'Gesamtsumme',
       amount: {
-        currency: 'USD',
+        currency: 'EUR',
         value: '55.00'
       }
     },
     displayItems: [{
-        label: 'Original donation amount',
+        label: 'Toilet paper',
         amount: {
-          currency: 'USD',
+          currency: 'EUR',
           value: '65.00'
         }
       },
       {
-        label: 'Friends and family discount',
+        label: 'Noodles',
         amount: {
-          currency: 'USD',
+          currency: 'EUR',
           value: '-10.00'
         }
       }
@@ -83,7 +85,7 @@ function onBuyClicked() { // eslint-disable-line no-unused-vars
         id: 'standard',
         label: 'Standard shipping',
         amount: {
-          currency: 'USD',
+          currency: 'EUR',
           value: '0.00'
         }
       },
@@ -91,7 +93,7 @@ function onBuyClicked() { // eslint-disable-line no-unused-vars
         id: 'express',
         label: 'Express shipping',
         amount: {
-          currency: 'USD',
+          currency: 'EUR',
           value: '12.00'
         }
       }
