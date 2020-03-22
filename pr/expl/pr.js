@@ -60,7 +60,7 @@ function onBuyClicked() { // eslint-disable-line no-unused-vars
 
   var details = {
     total: {
-      label: 'Gesamtsumme',
+      label: 'Total',
       amount: {
         currency: 'EUR',
         value: '55.00'
@@ -74,7 +74,7 @@ function onBuyClicked() { // eslint-disable-line no-unused-vars
         }
       },
       {
-        label: 'Noodles',
+        label: 'Corona special offer',
         amount: {
           currency: 'EUR',
           value: '-10.00'
